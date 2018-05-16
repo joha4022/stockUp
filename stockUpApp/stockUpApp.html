@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<link rel = 'stylesheet' href = 'stockUpApp.css'>
+		<script src = 'jquery.js'></script>
+		<title> Stock Up </title>
+	</head>
+
+	<body>
+		<h1 class = 'title_display'><img src = '../stockUpIcons/shopping.png' id = 'stock_up_icon'> Stock Up! </h1>
+		<input id = 'add_item_button' type = 'button' value = 'Click to add item'></input>
+		<br>
+		<section id = 'add_item_box'> 
+			<a class = 'h1'>ITEM &nbsp<input class = 'item_description' id = 'item_description' type = 'string' placeholder = 'Item description'></input></a>
+			<br><br>
+			<a class = 'h2'>BRAND &nbsp<input class = 'item_brand' id = 'item_brand' type = 'string' placeholder = 'Item brand'></input></a>
+			<br><br>
+			<a class = 'h3'>QUANTITY &nbsp<input class = 'item_quantity' id = 'item_quantity' type = 'number' placeholder = 'Item quantity'></input><input id = 'update_shopping_list' type = 'button' value = 'Add to list'></input></a>
+			<br>
+		</section>
+		<br>
+		<h2> You need to buy... </h2>
+			<input id = 'clear_marked_item' type = 'button' value = 'Clear marked items'></input>
+			<input id = 'clear_item_button' type = 'button' value = 'Clear all items'></input>
+			<br>
+			<p id = 'shopping_item'></p>
+	
+		<script src = 'stockUpApp.js'></script>
+		<script type = 'text/javascript'>
+			$(document).ready(function() {
+				// displays fillable section for ADD ITEM
+				$('#add_item_button').on('click', function() {
+					$('#add_item_box').slideToggle();
+					console.log('ready to add an item!');
+				});
+				// submits the add_item_box
+				$('#update_shopping_list').on('click', function() {
+					if($('.item_description')[0].value === '') {
+						alert('Please input an item!');
+					} else {
+						addToList();
+						var mostRecent = needToBuy.length - 1;
+						var addingItem = $('<div class = "item"><a id = "description">' + needToBuy[mostRecent].item + '&nbsp&nbsp&nbsp&nbsp' + needToBuy[mostRecent].quantity + '</a><input type = "checkbox" id = "check_box" name = "check_box"><br><a id = "brand_title">BRAND</a>' + ' ' + '<a id = "brand">' + needToBuy[mostRecent].brand + '</a><br><br>')
+						addingItem.fadeIn();
+						addingItem.prependTo($('#shopping_item'));
+						// clears all the input field
+						$('.item_description').text($('.item_description').val(''));
+						$('.item_brand').text($('.item_brand').val(''));
+						$('.item_quantity').text($('.item_quantity').val(''));
+					}
+				});
+				// updates item_description value as the user types
+				$('.item_description').on('keyup', function() {
+					$('.item_description').text($('.item_description').val());
+				});
+				// updates item_brand value as the user types
+				$('.item_brand').on('keyup', function() {
+					$('.item_brand').text($('.item_brand').val());
+				});
+				// updates item_quantity value as the user types
+				$('.item_quantity').on('keyup', function() {
+					$('.item_quantity').text($('.item_quantity').val());
+				});
+				// clears all the '#shopping_item'
+				$('#clear_item_button').on('click', function() {
+					$('.item').slideUp();
+					setTimeout(function() {
+						clearList();
+					}, 1000);
+				});
+				// clears only the marked items
+				$('#clear_marked_item').on('click', function() {
+					for(var i = 0; i < $('input[name = check_box]').length; i++) {
+						if($('input[name = check_box]')[i].checked === true) {
+							$('div').eq(i).slideUp();
+						}
+					}
+					setTimeout(function() {
+						clearMarkedItem();
+					}, 1000);
+				});	
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<link rel = 'stylesheet' href = 'stockUpMap.css'>
+  	<script src = 'jquery.js'></script>
+  	<script src = 'stockUpMap.js'></script>
+  </head>
+
+  <body>
+  	<div id = 'map'></div>
+    <script src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCn6mtxRkxkY0BRcJ5Jf9EBilrM0jfwLQs&callback=loadMap' async defer></script>
+    <br>
+  	<div id = 'yelp_search_box'>
+  		<div class = 'h1'>SEARCH FOR &nbsp<input id = 'yelp_term' type = 'string' placeholder = 'Search term'></input>
+  		<input id = 'yelp_term_submit' type = 'button' value = 'Search'></input>
+      </div>
+  		<div class = 'h2'>LOCATION &nbsp<input id = 'yelp_location' type = 'string' placeholder = 'Add location'></input>
+  		<input id = 'yelp_location_submit' type = 'button' value = 'Go'></input>
+      </div>
+  	</div>
+  	<div id = 'yelp_search_result'></div>
+  </body>
+
+  <script>
+  	$(document).ready(function() {
+  		$('#yelp_term_submit').on('click', function() {
+  			loadYelp();
+  		});
+  	});
+  </script>
+</html>

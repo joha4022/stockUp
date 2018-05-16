@@ -1,0 +1,128 @@
+body {
+	font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+	color: #464c55;
+}
+h1.title_display {
+	text-align: center;
+}
+a.h1 {
+	font-size: 12px;
+	font-weight: bold;
+}
+a.h2 {
+	font-size: 12px;
+	font-weight: bold;
+}
+a.h3 {
+	font-size: 12px;
+	font-weight: bold;
+}
+#stock_up_icon {
+	height: 50px;
+	vertical-align: bottom;
+}
+#add_item_button {
+	float: right;
+	cursor: pointer;
+	border-radius: 3px;
+    background-color: #6dc6af;
+    color: #ffffff;
+    padding-bottom: 3px;
+    padding-left: 3px;
+    padding-top: 3px;
+    padding-right: 3px;
+}
+#add_item_box {
+	display: none;
+	margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top-width: 10px;
+    border-bottom-width: 10px;
+    height: 65px;
+}
+#item_description {
+	border-radius: 3px;
+    border-width: 1px;
+    padding-bottom: 3px;
+    padding-left: 3px;
+    padding-top: 3px;
+    padding-right: 3px;
+}
+#item_brand {
+	border-radius: 3px;
+    border-width: 1px;
+    padding-bottom: 3px;
+    padding-left: 3px;
+    padding-top: 3px;
+    padding-right: 3px;
+}
+#item_quantity {
+	border-radius: 3px;
+    border-width: 1px;
+    padding-bottom: 3px;
+    padding-left: 3px;
+    padding-top: 3px;
+    padding-right: 3px;
+}
+#update_shopping_list {
+	float: right;
+	cursor: pointer;
+	background: #f37458;
+    color: #ffffff;
+    border-radius: 3px;
+    padding-bottom: 3px;
+    padding-left: 3px;
+    padding-top: 3px;
+    padding-right: 3px;
+}
+#clear_item_button {
+	float: right;
+	cursor: pointer;
+	border-radius: 3px;
+    background-color: #6dc6af;
+    color: #ffffff;
+    margin-left: 2px;
+    margin-top: 2px;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    padding-bottom: 3px;
+    padding-left: 3px;
+    padding-top: 3px;
+    padding-right: 3px;
+}
+#clear_marked_item {
+	float: right;
+	cursor: pointer;
+	border-radius: 3px;
+    background-color: #6dc6af;
+    color: #ffffff;
+    margin-left: 2px;
+    margin-top: 2px;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    padding-bottom: 3px;
+    padding-left: 3px;
+    padding-top: 3px;
+    padding-right: 3px;
+}
+#description {
+	font-size: 1.5em;
+	font-weight: bold;
+}
+#brand_title {
+	font-size: 12px;
+	color: lightgray;
+}
+#brand {
+	font-size: 12px;
+	color: #00BCD4;
+}
+#quantity {
+	font-size: 12px;
+}
+#check_box {
+	float: right;
+}
+
